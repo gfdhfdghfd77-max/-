@@ -1,9 +1,9 @@
 ﻿const API_KEY = '5a820fa7661bba61ada2b6a189c38751';
 
 const defaultLocation = {
-  lat: 25.0330,
-  lon: 121.5654,
-  label: '台北市（預設）'
+  lat: 25.0944,
+  lon: 121.5462,ㄒ
+  label: '東吳大學'
 };
 
 const ui = {
@@ -116,7 +116,7 @@ function renderWeather(data, labelFallback) {
 function attemptGeolocation() {
   if (!('geolocation' in navigator)) {
     setStatus('裝置不支援定位，改用預設城市');
-    setMessage('此瀏覽器不支援定位，改為顯示台北市天氣。');
+    setMessage('此瀏覽器不支援定位，改為顯示東吳大學天氣。');
     fetchWeather(defaultLocation);
     return;
   }
@@ -131,7 +131,7 @@ function attemptGeolocation() {
     (err) => {
       console.warn('Geolocation error', err);
       setStatus('定位失敗，改用預設城市');
-      setMessage('無法取得定位，改為顯示台北市天氣。');
+      setMessage('無法取得定位，改為顯示東吳大學天氣。');
       fetchWeather(defaultLocation);
     },
     {
