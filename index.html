@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>即時地區天氣監測</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="hero">
+      <div class="hero__text">
+        <p class="eyebrow">即時地區天氣監測</p>
+        <h1>你的所在點，現在的天空</h1>
+        <p class="sub">啟用定位並取得即時天氣，開啟通知隨時提醒。</p>
+      </div>
+      <div class="hero__badge" aria-live="polite" id="statusBadge">等待定位…</div>
+    </header>
+
+    <section class="card weather" aria-live="polite">
+      <div class="weather__header">
+        <div>
+          <p class="label">位置</p>
+          <p class="location" id="location">—</p>
+        </div>
+        <div class="temp-block">
+          <img id="icon" class="icon" alt="" src="" />
+          <p class="temp" id="temp">--°C</p>
+        </div>
+      </div>
+      <div class="grid">
+        <div class="grid__item">
+          <p class="label">體感溫度</p>
+          <p class="value" id="feelsLike">—</p>
+        </div>
+        <div class="grid__item">
+          <p class="label">濕度</p>
+          <p class="value" id="humidity">—</p>
+        </div>
+        <div class="grid__item">
+          <p class="label">天氣狀況</p>
+          <p class="value" id="description">—</p>
+        </div>
+        <div class="grid__item">
+          <p class="label">更新時間</p>
+          <p class="value" id="updatedAt">—</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="actions">
+      <button class="btn" id="refreshBtn">重新取得天氣</button>
+      <button class="btn" id="notifyBtn">開啟天氣通知</button>
+      <button class="btn ghost" id="testNotifyBtn" disabled>發送測試通知</button>
+    </section>
+
+    <p class="note" id="message" role="status" aria-live="polite"></p>
+  </main>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
