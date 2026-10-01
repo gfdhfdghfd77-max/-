@@ -2,7 +2,7 @@
 
 const defaultLocation = {
   lat: 25.0944,
-  lon: 121.5462,ㄒ
+  lon: 121.5462,
   label: '東吳大學'
 };
 
